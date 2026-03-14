@@ -147,6 +147,74 @@ nav a:hover { color: #fff; }
     100% { transform: scale(1.05); opacity: 0.8; }
 }
 
+/* Typewriter Cursor Animation */
+.cursor {
+    font-weight: bold;
+    color: #60a5fa;
+    animation: blink 0.8s infinite;
+    margin-left: 5px;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* About Section Layout */
+.about-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-img {
+    flex: 1;
+    max-width: 300px;
+}
+.about-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+.about-img img:hover {
+    transform: scale(1.05);
+}
+.about-text {
+    flex: 2;
+    text-align: left;
+    padding: 40px;
+    line-height: 1.8;
+    margin: 0; 
+}
+
+/* Mobile Responsive For About Section */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-img {
+        max-width: 250px;
+    }
+    .about-text {
+        text-align: center;
+        padding: 25px;
+    }
+}
+
 /* Education Timeline */
 .education-section { padding: 80px 8%; }
 .education-section h2, .skills-section h2, .projects-section h2 {
@@ -200,9 +268,9 @@ nav a:hover { color: #fff; }
     border-radius: 20px;
     overflow: hidden;
     transition: 0.4s;
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Keeps text color normal */
-    display: block; /* Makes the whole card clickable */
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
 }
 .project-card:hover {
     transform: translateY(-10px);
@@ -241,13 +309,11 @@ nav a:hover { color: #fff; }
 a:visited {
     color: inherit;
 }
-
 .project-card:visited h3 {
-    color: #fff; /* මාතෘකාව දිගටම සුදු පාටින් තියාගන්න */
+    color: #fff; 
 }
-
 .project-card:visited p {
-    color: #94a3b8; /* විස්තරය දිගටම අළු පාටින් තියාගන්න */
+    color: #94a3b8; 
 }
 
 /* Fix for underlined text in project cards */
