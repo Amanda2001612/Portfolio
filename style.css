@@ -1,0 +1,256 @@
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glowing Orbs */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    animation: float 10s infinite alternate;
+}
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(99, 102, 241, 0.3);
+    top: -100px;
+    left: -100px;
+}
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(236, 72, 153, 0.2);
+    bottom: 20%;
+    right: -50px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(50px) scale(1.1); }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.logo { font-size: 1.8rem; font-weight: 700; }
+.logo span { color: #6366f1; }
+nav ul { list-style: none; display: flex; gap: 30px; align-items: center; }
+nav a { text-decoration: none; color: #cbd5e1; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: #fff; }
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-outline {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-primary { background: linear-gradient(45deg, #6366f1, #ec4899); color: #fff; border: none; }
+.btn-primary:hover { box-shadow: 0 0 15px rgba(99, 102, 241, 0.6); transform: translateY(-2px); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.btn-outline { border: 1px solid #6366f1; color: #fff; }
+.btn-outline:hover { background: #6366f1; }
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 8% 50px;
+}
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap-reverse;
+}
+.hero-text { flex: 1; min-width: 300px; }
+.greeting { font-size: 1.5rem; color: #cbd5e1; margin-bottom: 10px; }
+.name { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+.name span { background: linear-gradient(45deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { font-size: 1.1rem; color: #94a3b8; margin-bottom: 30px; }
+.hero-btns { display: flex; gap: 15px; }
+
+/* Profile Image */
+.hero-image {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+.profile-pic {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}
+.glow-ring {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: pulse 3s infinite alternate;
+    z-index: 1;
+}
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    100% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* Education Timeline */
+.education-section { padding: 80px 8%; }
+.education-section h2, .skills-section h2, .projects-section h2 {
+    text-align: center; font-size: 2.5rem; margin-bottom: 50px;
+}
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 2px solid rgba(99, 102, 241, 0.5);
+}
+.timeline-item { position: relative; margin-bottom: 30px; padding: 25px; }
+.timeline-dot {
+    position: absolute;
+    left: -42px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: #ec4899;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ec4899;
+}
+.timeline-item h3 { color: #fff; font-size: 1.3rem; margin-bottom: 5px; }
+.timeline-item h4 { color: #6366f1; font-size: 1rem; margin-bottom: 15px; font-weight: 500; }
+.timeline-item p { color: #94a3b8; font-size: 0.95rem; }
+
+/* Skills Section */
+.skills-section { padding: 80px 8%; }
+.skills-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto;
+}
+.skill-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.skill-tag:hover { background: #6366f1; color: #fff; transform: translateY(-3px); }
+
+/* Projects Grid */
+.projects-section { padding: 80px 8%; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+/* Project Card & Anchor styles */
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps text color normal */
+    display: block; /* Makes the whole card clickable */
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Project Image & Zoom Effect */
+.project-img { 
+    height: 220px; 
+    overflow: hidden; 
+    display: block;
+}
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+.project-card:hover .project-img img {
+    transform: scale(1.08);
+}
+
+.project-info { padding: 25px; }
+.project-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.project-info p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
+.tags { display: flex; gap: 10px; }
+.tags span { font-size: 0.8rem; padding: 5px 12px; background: rgba(99, 102, 241, 0.2); color: #818cf8; border-radius: 15px; }
+
+/* Scroll Animations */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-in-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Remove default purple color from clicked links */
+a:visited {
+    color: inherit;
+}
+
+.project-card:visited h3 {
+    color: #fff; /* මාතෘකාව දිගටම සුදු පාටින් තියාගන්න */
+}
+
+.project-card:visited p {
+    color: #94a3b8; /* විස්තරය දිගටම අළු පාටින් තියාගන්න */
+}
+
+/* Fix for underlined text in project cards */
+a, .project-card, .project-card * {
+    text-decoration: none !important;
+}
